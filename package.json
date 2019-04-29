@@ -1,0 +1,75 @@
+{
+  "name": "puppeteer-cluster",
+  "version": "0.15.2",
+  "description": "Cluster management for puppeteer",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "./node_modules/.bin/jest",
+    "coverage": "./node_modules/.bin/jest --coverage",
+    "dev": "./node_modules/.bin/tsc --watch",
+    "lint": "./node_modules/.bin/tslint -c tslint.json --project test/_config/tsconfig.json \"src/**/*.ts\" \"test/**/*.ts\""
+  },
+  "author": "Thomas Dondorf",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thomasdondorf/puppeteer-cluster.git"
+  },
+  "homepage": "https://github.com/thomasdondorf/puppeteer-cluster",
+  "keywords": [
+    "puppeteer",
+    "cluster",
+    "pool"
+  ],
+  "license": "GPL-3.0",
+  "dependencies": {
+    "debug": "^4.1.1"
+  },
+  "peerDependencies": {
+    "puppeteer": "^1.5.0",
+    "chrome-launcher": "^0.10.5"
+  },
+  "devDependencies": {
+    "@types/debug": "^4.1.1",
+    "@types/jest": "^24.0.6",
+    "@types/node": "^11.9.5",
+    "@types/puppeteer": "^1.12.1",
+    "@types/puppeteer-core": "^1.9.0",
+    "@types/request": "^2.48.1",
+    "chrome-launcher": "^0.10.5",
+    "coveralls": "^3.0.3",
+    "express": "^4.16.4",
+    "jest": "^24.3.1",
+    "puppeteer": "^1.12.2",
+    "puppeteer-core": "^1.12.2",
+    "request": "^2.88.0",
+    "tree-kill": "^1.2.0",
+    "ts-jest": "^24.0.0",
+    "tslint": "^5.13.0",
+    "tslint-config-airbnb": "^5.11.0",
+    "typescript": "^3.3.3333"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>/test/_config/setup.js"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.ts"
+    ],
+    "coverageReporters": [
+      "lcov",
+      "text",
+      "text-summary"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "/test/.*\\.test\\.ts$",
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json"
+    ]
+  }
+}
